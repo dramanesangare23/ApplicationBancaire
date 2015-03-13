@@ -1,0 +1,26 @@
+import monModel : 'platform:/resource/ApplicationBancaire/model.uml#/'
+
+package monModel::Classes
+--The queries
+context Compte
+def  autoriseClient : autorise() : Boolean = 
+	proprietaire.comptes->select(c : Compte | c.banque = self.banque)->size() <= 0
+
+--The invariants
+context Compte
+inv soldePositif: solde > 0
+inv proprioCompteExisteParmiClients: banque.clients->includes(proprietaire)
+inv plus18Ans: proprietaire.age >= 18
+inv auMoinsUnProprio: proprietaire->notEmpty()
+inv proprioUnique : proprietaire->size() = 1
+inv banqueAAuMoinsUnClient : banque.clients->notEmpty()
+inv clientBanqueContientProprio : banque.clients->includes(proprietaire)
+inv compteAppAUnClientDeLaBanque : banque.clients.comptes->includes(self)
+
+context Compte::getSolde() : Integer
+post laValeurRetourVautSolde : result = solde
+
+context Compte::debiter(somme : Integer):Banque
+pre sommePovitive : somme > 0
+
+endpackage

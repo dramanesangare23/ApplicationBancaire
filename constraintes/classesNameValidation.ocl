@@ -1,0 +1,13 @@
+import uml : 'http://www.eclipse.org/uml2/5.0.0/UML#/'
+
+context uml::Class
+/*
+ * The first letter of class-name should be an upper-case
+ */
+ 	inv validClassName(name.toString()+' is an invalid name') : name.at(1) = name.at(1).toUpperCase()
+
+context uml::Operation
+/*
+ * The first letter of operation-name should be an lower-case
+ */
+	inv validOperationName('The first letter of operation-name should be an lower-case') : name.at(1) = name.at(1).toLowerCase()

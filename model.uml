@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_4TMEIMfmEeSlYOwBLTFu3g" name="model" URI="">
+  <packagedElement xmi:type="uml:Package" xmi:id="_9z23YMfmEeSlYOwBLTFu3g" name="Classes">
+    <packagedElement xmi:type="uml:Class" xmi:id="_J1KGEMfnEeSlYOwBLTFu3g" name="Banque">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_9_5n8MfpEeSlYOwBLTFu3g" name="clients" type="_RwKNwMfnEeSlYOwBLTFu3g" association="_9_8rQMfpEeSlYOwBLTFu3g">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9_5n8cfpEeSlYOwBLTFu3g"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9_5n8sfpEeSlYOwBLTFu3g" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_80isYMjLEeSkSKWhwy8KFg" name="comptes" type="_hZ-0sMjLEeSkSKWhwy8KFg" association="_80m90MjLEeSkSKWhwy8KFg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_80jTcMjLEeSkSKWhwy8KFg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_80jTccjLEeSkSKWhwy8KFg" value="*"/>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_wAtDAMgGEeSIgrJkHwGgOA" name="creerCompte">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_3ck-sMgGEeSIgrJkHwGgOA" name="client" type="_RwKNwMfnEeSlYOwBLTFu3g"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_lbfosMjTEeSkSKWhwy8KFg" name="compte" type="_hZ-0sMjLEeSkSKWhwy8KFg" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_RwKNwMfnEeSlYOwBLTFu3g" name="Personne">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_rWfSQMfoEeSlYOwBLTFu3g" name="age" type="_PbTlMMlmEeSe1aFFnoFz7w"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_i7BCUMgKEeSIgrJkHwGgOA" name="nom" type="_TxMAUMlmEeSe1aFFnoFz7w"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_5tgq0MibEeS5Ges1FOqNEQ" name="sexe" type="_TXi1gMibEeS5Ges1FOqNEQ"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_IJGw4MjMEeSkSKWhwy8KFg" name="comptes" type="_hZ-0sMjLEeSkSKWhwy8KFg" association="_IJImEMjMEeSkSKWhwy8KFg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IJGw4cjMEeSkSKWhwy8KFg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IJGw4sjMEeSkSKWhwy8KFg" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_9_8rQMfpEeSlYOwBLTFu3g" memberEnd="_9_8rQcfpEeSlYOwBLTFu3g _9_5n8MfpEeSlYOwBLTFu3g">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_9_8rQcfpEeSlYOwBLTFu3g" name="banques" type="_J1KGEMfnEeSlYOwBLTFu3g" association="_9_8rQMfpEeSlYOwBLTFu3g">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9_8rQsfpEeSlYOwBLTFu3g"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9_8rQ8fpEeSlYOwBLTFu3g" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_qKdzsMibEeS5Ges1FOqNEQ" name="dependency1" client="_9z23YMfmEeSlYOwBLTFu3g" supplier="_OT58gMibEeS5Ges1FOqNEQ"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_AydUQMicEeS5Ges1FOqNEQ" name="Homme">
+      <generalization xmi:type="uml:Generalization" xmi:id="_VBs0wMicEeS5Ges1FOqNEQ" general="_RwKNwMfnEeSlYOwBLTFu3g"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_EsGfUMicEeS5Ges1FOqNEQ" name="Femme">
+      <generalization xmi:type="uml:Generalization" xmi:id="_UZPtoMicEeS5Ges1FOqNEQ" general="_RwKNwMfnEeSlYOwBLTFu3g"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_hZ-0sMjLEeSkSKWhwy8KFg" name="Compte">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_m25JUMjLEeSkSKWhwy8KFg" name="solde" type="_PbTlMMlmEeSe1aFFnoFz7w"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_rK244MjLEeSkSKWhwy8KFg" name="debiter">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_vGZhYMjLEeSkSKWhwy8KFg" name="somme" type="_PbTlMMlmEeSe1aFFnoFz7w"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_wucdQMjLEeSkSKWhwy8KFg" name="crediter">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_z5SBkMjLEeSkSKWhwy8KFg" name="somme" type="_PbTlMMlmEeSe1aFFnoFz7w"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_1PYR0MjLEeSkSKWhwy8KFg" name="getSolde">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_5oGlkMjLEeSkSKWhwy8KFg" name="resultat" type="_PbTlMMlmEeSe1aFFnoFz7w" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_80m90MjLEeSkSKWhwy8KFg" memberEnd="_80m90cjLEeSkSKWhwy8KFg _80isYMjLEeSkSKWhwy8KFg">
+      <name xsi:nil="true"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_80m90cjLEeSkSKWhwy8KFg" name="banque" type="_J1KGEMfnEeSlYOwBLTFu3g" association="_80m90MjLEeSkSKWhwy8KFg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_80m90sjLEeSkSKWhwy8KFg" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_80m908jLEeSkSKWhwy8KFg" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_IJImEMjMEeSkSKWhwy8KFg" memberEnd="_IJImEcjMEeSkSKWhwy8KFg _IJGw4MjMEeSkSKWhwy8KFg">
+      <name xsi:nil="true"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_IJImEcjMEeSkSKWhwy8KFg" name="proprietaire" type="_RwKNwMfnEeSlYOwBLTFu3g" association="_IJImEMjMEeSkSKWhwy8KFg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IJImEsjMEeSkSKWhwy8KFg" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IJImE8jMEeSkSKWhwy8KFg" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_sPxPEMlmEeSe1aFFnoFz7w" name="dependency2" client="_9z23YMfmEeSlYOwBLTFu3g" supplier="_LrQbAMlmEeSe1aFFnoFz7w"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_OT58gMibEeS5Ges1FOqNEQ" name="Enumerations">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_TXi1gMibEeS5Ges1FOqNEQ" name="Gender">
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_YaNeIMibEeS5Ges1FOqNEQ" name="male"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_bw338MibEeS5Ges1FOqNEQ" name="female"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_LrQbAMlmEeSe1aFFnoFz7w" name="PrimitivesTypes">
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_PbTlMMlmEeSe1aFFnoFz7w" name="int"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_TxMAUMlmEeSe1aFFnoFz7w" name="String"/>
+  </packagedElement>
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_D5Mf4MiVEeS5Ges1FOqNEQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_D6YLoMiVEeS5Ges1FOqNEQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g"/>
+    </eAnnotations>
+    <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+  </profileApplication>
+</uml:Model>

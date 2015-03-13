@@ -1,0 +1,25 @@
+import monModel : 'platform:/resource/ApplicationBancaire/model.uml#/'
+
+package monModel::Classes
+
+context Banque
+
+--The queries
+def  soldesSuperiursAVal: soldesSup(val: Integer) : Set(Compte) = 
+	comptes->select(c:Compte | c.solde > val)
+
+context Banque
+--The invariants
+inv ageSup18: not(clients->exists(age < 18))
+inv comptesNonVides: comptes->forAll(c:Compte | c.getSolde() > 0)
+inv AuMoinsUnSoldeSupA1000: self.soldesSup(1000)->notEmpty()
+
+--Constraints on functions
+context Banque::creerCompte(client: Personne): Compte
+post creation: result.oclIsNew() and
+	comptes = comptes@pre->including(result) and
+	client.comptes = client.comptes->including(result) and
+	result.proprietaire = client and
+	result.banque = self
+
+endpackage

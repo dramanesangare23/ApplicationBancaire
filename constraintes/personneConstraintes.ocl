@@ -1,0 +1,25 @@
+import monModel : 'platform:/resource/ApplicationBancaire/model.uml#/'
+
+package monModel::Classes
+
+context Personne
+inv nomsDifferents: Personne.allInstances()->forAll(p1, p2 : Personne| p1 <> p2 implies p1.nom <> p2.nom)
+inv compteBancaire18ans: 
+	if(age >= 18) then --verify age of a person
+		comptes->notEmpty() --adult implies owner of an account at least
+	else 
+		comptes->isEmpty() --not adult no account
+	endif
+inv compteDonneBanque: comptes-> notEmpty() implies banques->notEmpty()
+inv compteMajeurNonVide: 
+	let argent = comptes.solde->sum() in 
+	age >= 18 implies argent > 0
+	
+context Homme
+inv sexeMasculin: sexe = monModel::Enumerations::Gender::male
+
+context Femme
+inv sexeFeminin: sexe = monModel::Enumerations::Gender::female
+
+
+endpackage
